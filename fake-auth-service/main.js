@@ -9,6 +9,9 @@ const sessionTokens = [];
 app.get('/authenticate', (req, res) => {
   const [username, password] = [req.query.username, req.query.password];
   console.log(`/authenticate called with username ${username} and password ${password}`);
+  if (username !== password) {
+    return res.sendStatus(401);
+  }
   const sessionToken = `session_${_.random(1, 10000)}`;
   sessionTokens.push(sessionToken);
   res.json({
