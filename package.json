@@ -1,12 +1,9 @@
 {
-  "name": "loadtest-demo",
+  "name": "artillery-demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "author": "Akash Kurdekar",
   "license": "ISC",
   "dependencies": {
     "artillery": "^1.3.12",
