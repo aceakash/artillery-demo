@@ -1,0 +1,46 @@
+{
+  "config": {
+    "target": "http://localhost:4567",
+    "phases": [
+      {
+        "duration": 10,
+        "arrivalRate": 5,
+        "name": "Warm-up"
+      },
+      {
+        "pause": 10
+      },
+      {
+        "duration": 10,
+        "arrivalCount": 30
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 50,
+        "name": "High load phase"
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "flow": [
+        {
+          "get": {
+            "url": "/authenticate?username=boo&password=boo",
+            "capture": {
+              "json": "$.sessionToken",
+              "as": "stoken"
+            }
+
+          }
+        },
+        {
+          "get": {
+            "url": "/session/keep-alive?sessionToken={{stoken}}"
+          }
+        }
+
+      ]
+    }
+  ]
+}
