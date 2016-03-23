@@ -3,21 +3,23 @@
     "target": "http://localhost:4567",
     "phases": [
       {
+        "name": "Warm-up",
         "duration": 10,
-        "arrivalRate": 5,
-        "name": "Warm-up"
+        "arrivalRate": 5
       },
       {
+        "name": "Wait 10 seconds",
         "pause": 10
       },
       {
+        "name": "By arrival count",
         "duration": 10,
         "arrivalCount": 30
       },
       {
+        "name": "High load phase - by arrival rate",
         "duration": 10,
-        "arrivalRate": 50,
-        "name": "High load phase"
+        "arrivalRate": 50
       }
     ]
   },
